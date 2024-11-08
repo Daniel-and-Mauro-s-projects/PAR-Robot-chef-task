@@ -3,17 +3,30 @@
     (:objects 
         storage-room preparation-room cooking-room serving-room dishwashing-room cutting-room mixing-room - room
         sushi - dish 
-        knife spatula- tool
+        knife spatula - tool
         rice fish vegetable - ingredient
         chef - robot
     )
 
     (:init
         (at chef cooking-room)
-        (at rice storage-room)
-        (at fish storage-room)
-        (at knife cutting-room)
-        (at spatula mixing-room)
+
+        (ingredient-stored fish)
+        (ingredient-stored rice)
+        (ingredient-stored vegetable)
+
+        (ingredient-prep-room rice mixing-room)
+        (ingredient-prep-room fish cutting-room)
+        (ingredient-prep-room vegetable cutting-room)
+
+        ; recipe
+        (ingredient-in-dish rice sushi)
+        (ingredient-in-dish fish sushi)
+        (ingredient-in-dish vegetable sushi)
+
+        (require-prepared sushi vegetable)
+        (require-prepared sushi fish)
+        (require-cooked sushi rice)
 
         (tool-use-room knife cutting-room)
         (tool-use-room spatula mixing-room)
@@ -52,6 +65,12 @@
 
     (:goal (and
         (dish-served sushi)
+        (at chef serving-room)
+        (at knife cutting-room)
+        (at spatula mixing-room)
+        (clean knife)
+        (clean spatula)
+
     ))
 
 )
