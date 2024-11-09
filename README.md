@@ -4,14 +4,15 @@ The code is now running for the basic test case.
 
 TODO: 
 
-[ ] Write introduction for the problem, discussing the predicates, actions
+Dani: [ ] Write introduction for the problem, discussing the predicates, actions
 
-[ ] Invent three test cases of increasing complexity
+[ ] Invent and implement two test cases of increasing complexity
 
 [ ] Perform the planning on the test cases and analyze the result (time, nodes expanded/generated)
 
 [ ] Include the result (sequence of actions) in the report
 
+[ ] If we don't have the time to implement the real-time and error handling, then at least comment our thoughts on that, saying what would we do (what predicates, actions to implement)
 
 Other todo: 
 

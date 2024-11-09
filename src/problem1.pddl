@@ -42,8 +42,6 @@
         (is-cooking cooking-room)
         (is-serving serving-room)
         (is-dishwashing dishwashing-room)
-        (is-cutting cutting-room)
-        (is-mixing mixing-room)
 
         (adjacent serving-room cooking-room)
         (adjacent cooking-room serving-room)
@@ -70,7 +68,6 @@
         (at spatula mixing-room)
         (clean knife)
         (clean spatula)
-
     ))
 
 )

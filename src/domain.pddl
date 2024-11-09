@@ -12,8 +12,6 @@
     (:predicates 
         ; Basic predicates
         (at ?x - portable ?y - room) ; we unite the tool-at, ingredient-at and robot-at predicates into one
-        (prepared ?dish -dish)
-        (served ?dish - dish); The dish is served
         (clean ?tool - tool)
         (holding ?x - item)
         (not-holding)
@@ -34,8 +32,6 @@
         (is-serving ?room - room)
         (is-preparation ?room - room)
         (is-dishwashing ?room - room)
-        (is-cutting ?room - room)
-        (is-mixing ?room - room)
 
         (tool-use-room ?tool - tool ?room - room)
         (ingredient-prep-room ?ingredient - ingredient ?room - room)
@@ -51,31 +47,31 @@
         (require-cooked ?dish - dish ?ingredient - ingredient)
 
     )
-    (:action pick-up
-        :parameters (?robot - robot ?item - item ?room - room)
-        :precondition (and 
-            (at ?robot ?room)
-            (at ?item ?room)
-            (not-holding)
-        )
-        :effect (and 
-            (holding ?item)
-            (not (at ?item ?room))
-            (not (not-holding))
-        )
+(:action pick-up
+    :parameters (?robot - robot ?item - item ?room - room)
+    :precondition (and 
+        (at ?robot ?room)
+        (at ?item ?room)
+        (not-holding)
     )
+    :effect (and 
+        (holding ?item)
+        (not (at ?item ?room))
+        (not (not-holding))
+    )
+)
 
-    (:action move
-        :parameters (?robot - robot ?from - room ?to - room)
-        :precondition (and 
-            (at ?robot ?from)
-            (adjacent ?from ?to)
-        )
-        :effect (and 
-            (at ?robot ?to)
-            (not (at ?robot ?from))
-        )
+(:action move
+    :parameters (?robot - robot ?from - room ?to - room)
+    :precondition (and 
+        (at ?robot ?from)
+        (adjacent ?from ?to)
     )
+    :effect (and 
+        (at ?robot ?to)
+        (not (at ?robot ?from))
+    )
+)
 (:action pick-up-ingredient
     :parameters (?robot - robot ?ingredient - ingredient ?dish - dish ?room - room)
     :precondition (and
@@ -94,20 +90,20 @@
 )
 
 (:action prepare-ingredient
-        :parameters (?robot - robot ?ingredient - ingredient ?tool -tool ?room - room)
-        :precondition (and
-            (at ?robot ?room)
-            (ingredient-prep-room ?ingredient ?room)
-            (at ?ingredient ?room)
-            (holding ?tool)
-            (tool-use-room ?tool ?room)
-            (clean ?tool)
-        )
-        :effect (and
-            (ingredient-prepared ?ingredient)
-            (not (clean ?tool))
-        )
+    :parameters (?robot - robot ?ingredient - ingredient ?tool -tool ?room - room)
+    :precondition (and
+        (at ?robot ?room)
+        (ingredient-prep-room ?ingredient ?room)
+        (at ?ingredient ?room)
+        (holding ?tool)
+        (tool-use-room ?tool ?room)
+        (clean ?tool)
     )
+    :effect (and
+        (ingredient-prepared ?ingredient)
+        (not (clean ?tool))
+    )
+)
 (:action cook-ingredient
     :parameters (?robot - robot ?ingredient - ingredient ?room - room)
     :precondition (and
@@ -153,7 +149,7 @@
                 )
             )
         )
-    )
+)
 (:action plate-dish
     :parameters (?robot - robot ?room - room ?dish - dish)
     :precondition (and
@@ -182,32 +178,31 @@
         )   
     )
 (:action drop-ingredient-at-prep
-        :parameters (?robot - robot ?ingredient - ingredient ?room - room)
-        :precondition (and
-            (at ?robot ?room)
-            (holding ?ingredient)
-            (or
-                (ingredient-prep-room ?ingredient ?room)
-                (is-preparation ?room)
-            )
-        )
-        :effect (and
-            (not (holding ?ingredient))
-            (not-holding)
-            (at ?ingredient ?room)
+    :parameters (?robot - robot ?ingredient - ingredient ?room - room)
+    :precondition (and
+        (at ?robot ?room)
+        (holding ?ingredient)
+        (or
+            (ingredient-prep-room ?ingredient ?room)
+            (is-preparation ?room)
         )
     )
-
-    (:action clean-tool
-        :parameters (?robot - robot ?tool - tool ?room - room)
-        :precondition (and 
-            (at ?robot ?room)
-            (is-dishwashing ?room)
-            (holding ?tool)
-            (not (clean ?tool))
-        )
-        :effect (and 
-            (clean ?tool)
-        )
+    :effect (and
+        (not (holding ?ingredient))
+        (not-holding)
+        (at ?ingredient ?room)
     )
+)
+(:action clean-tool
+    :parameters (?robot - robot ?tool - tool ?room - room)
+    :precondition (and 
+        (at ?robot ?room)
+        (is-dishwashing ?room)
+        (holding ?tool)
+        (not (clean ?tool))
+    )
+    :effect (and 
+        (clean ?tool)
+    )
+)
 )
