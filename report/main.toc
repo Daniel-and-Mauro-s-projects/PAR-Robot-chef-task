@@ -13,8 +13,9 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Objects and Initial State}{7}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Plan and Metrics}{8}{subsubsection.3.3.2}%
 \contentsline {section}{\numberline {4}Discussion}{8}{section.4}%
-\contentsline {section}{\numberline {5}Future Work}{8}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}%
+\contentsline {section}{\numberline {5}Discussion}{8}{section.5}%
+\contentsline {section}{\numberline {6}Future Work}{8}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{9}{section.7}%
 \contentsline {section}{\numberline {A}Planning Output}{10}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Problem 1}{10}{subsection.A.1}%
 \contentsline {subsection}{\numberline {A.2}Problem 2}{11}{subsection.A.2}%
