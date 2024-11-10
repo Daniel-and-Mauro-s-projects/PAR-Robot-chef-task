@@ -102,18 +102,34 @@ This assignment involves designing a plan for a robot chef operating within the 
 
 The planning solution is implemented using the Planning Domain Definition Language (PDDL), which defines the necessary actions, predicates, and conditions to enable the robot to effectively fulfill its tasks. This report provides a comprehensive analysis of the problem, including the structure of the PDDL model, testing cases across different scenarios, and results demonstrating the robot’s adaptability to diverse dish requirements, resource management, and task optimization. The following sections detail the problem setup, solution framework, and evaluation of scenario-based testing to assess the robot’s performance, efficiency, and flexibility.
 
-\section{Methodologyand implementation details}
+\section{Methodology and implementation details}
 \label{sec:methodology}
 We now define the predicates and actions that we are using in the PDDL implementation. The predicates define the state of the world (in this case, the kitchen and its elements), such as valid rooms and their adjacencies, the location of tools, and the condition of ingredients. Actions describe the possible operations the robot can perform, including moving around the kitchen, picking up items (tools, ingredients and dishes), and using them to assemble the required dishes.
 
 \subsection{Predicates}
 \begin{itemize}
-    \item \texttt{(at ?x - portable ? - room)}: A \textit{portable} object is located in a specific room.
-    \item \texttt{(clean ?tool - tool)}: The \textit{tool} is clean.
-    \item \texttt{(holding ?x - item)}: The robot is holding the \textit{item}.
-    \item \texttt{(not-holding)}: The robot is not holding anything. 
-
-
+    \item \texttt{(at ?x - portable ?y - room)}: A \textit{portable} object \textbf{?x} is located in a specific \textit{room} \textbf{?y}.
+    \item \texttt{(clean ?tool - tool)}: The \textit{tool} \textbf{?tool} is clean.
+    \item \texttt{(holding ?x - item)}: The robot is holding the \textit{item} \textbf{?x}.
+    \item \texttt{(not-holding)}: The robot is not holding anything.
+    \item \texttt{(adjacent ?room1 - room ?room2 - room)}: \textit{Room} \textbf{?room1} is adjacent to \textit{room} \textbf{?room2}.
+    \item \texttt{(dish-prepared ?dish - dish)}: The \textit{dish} \textbf{?dish} has been prepared.
+    \item \texttt{(dish-served ?dish - dish)}: The \textit{dish} \textbf{?dish} has been served.
+    \item \texttt{(prioritize ?dish1 ?dish2)}: \textit{Dish} \textbf{?dish1} has higher priority than \textit{dish} \textbf{?dish2}.
+    \item \texttt{(is-storage ?room - room)}: \textit{Room} \textbf{?room} functions as a storage area.
+    \item \texttt{(is-cooking ?room - room)}: \textit{Room} \textbf{?room} is designated for cooking activities.
+    \item \texttt{(is-serving ?room - room)}: \textit{Room} \textbf{?room} is designated for serving activities.
+    \item \texttt{(is-preparation ?room - room)}: \textit{Room} \textbf{?room} is designated for preparation activities.
+    \item \texttt{(is-dishwashing ?room - room)}: \textit{Room} \textbf{?room} is designated for dishwashing activities.
+    \item \texttt{(tool-use-room ?tool - tool ?room - room)}: The \textit{tool} \textbf{?tool} is used in \textit{room} \textbf{?room}.
+    \item \texttt{(ingredient-prep-room ?ingredient - ingredient ?room - room)}: The \textit{ingredient} \textbf{?ingredient} is prepared in \textit{room} \textbf{?room}.
+    \item \texttt{(ingredient-stored ?ingredient - ingredient)}: The \textit{ingredient} \textbf{?ingredient} is stored.
+    \item \texttt{(ingredient-available ?ingredient - ingredient)}: The \textit{ingredient} \textbf{?ingredient} is available for use.
+    \item \texttt{(ingredient-prepared ?ingredient - ingredient)}: The \textit{ingredient} \textbf{?ingredient} has been prepared.
+    \item \texttt{(ingredient-cooked ?ingredient - ingredient)}: The \textit{ingredient} \textbf{?ingredient} has been cooked.
+    \item \texttt{(ingredient-in-dish ?ingredient - ingredient ?dish - dish)}: The \textit{ingredient} \textbf{?ingredient} is included in the \textit{dish} \textbf{?dish}.
+    \item \texttt{(require-prepared ?dish - dish ?ingredient - ingredient)}: The \textit{dish} \textbf{?dish} requires the \textit{ingredient} \textbf{?ingredient} to be prepared.
+    \item \texttt{(require-cooked ?dish - dish ?ingredient - ingredient)}: The \textit{dish} \textbf{?dish} requires the \textit{ingredient} \textbf{?ingredient} to be cooked.
 \end{itemize}
 
 \subsection{Actions}
