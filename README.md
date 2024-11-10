@@ -1,23 +1,3 @@
-# PAR Robot chef task
+# Robot chef task
 
-The code is now running for the basic test case. 
-
-TODO: 
-
-Dani: [ ] Write introduction for the problem, discussing the predicates, actions
-
-[ ] Invent and implement two test cases of increasing complexity
-
-[ ] Perform the planning on the test cases and analyze the result (time, nodes expanded/generated)
-
-[ ] Include the result (sequence of actions) in the report
-
-[ ] If we don't have the time to implement the real-time and error handling, then at least comment our thoughts on that, saying what would we do (what predicates, actions to implement)
-
-Other todo: 
-
-[ ] Integration with Real-Time Order Systems: Expanding on how the robot interfaces with the digital order system could clarify operational dynamics, especially how it handles order prioritization and scheduling in real-time.
-For this, we could add a predicate (prioritize ?dish1 ?dish2)
-
-[ ] Missing ingredients or tools? 
-Maybe include add-ingredient ?ingredient and add-tool ?tool actions if they are missing.
+This report describes the development and implementation of the Robot Chef task for the Planning and Approximate Reasoning class at the FIB's Master in Artificial Intelligence.  The objective of this project is to automate meal preparation in a structured kitchen environment using a planning algorithm implemented in PDDL. For this project, we utilized the Best First Width Search (BFWS) planner to enable the robot to handle various recipes—such as tortilla, sushi, and paella — each requiring specific preparation steps across different kitchen zones. The task begins with a scenario where tools are misplaced and dirty, requiring the robot to clean, relocate, and organize the tools before proceeding with tasks like cutting, cooking, and mixing to prepare the ingredients.
