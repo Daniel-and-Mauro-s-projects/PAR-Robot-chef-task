@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  10 NOV 2024 15:27
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  10 NOV 2024 15:52
->>>>>>> c17cf24 (wrapfigure and discussion)
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  10 NOV 2024 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,44 +777,27 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./main.toc)
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-
-[1
-
-<<<<<<< HEAD
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3]
-Overfull \hbox (5.14262pt too wide) in paragraph at lines 150--151
-\OT1/cmr/m/n/12 In this prob-lem, we have five rooms: storage-room preparation-room cooking-room serving-
+ [2] [3{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (7.24571pt too wide) in paragraph at lines 138--139
+[]\OT1/cmtt/m/n/12 (require-prepared ?dish - dish ?ingredient - ingredient)\OT1
+/cmr/m/n/12 : The \OT1/cmr/m/it/12 dish \OT1/cmr/bx/n/12 ?dish
  []
 
-
-LaTeX Warning: Reference `sec:plan1' on page 4 undefined on input line 158.
-
-
-LaTeX Warning: Reference `sec:plan2' on page 4 undefined on input line 187.
-
-[4]
-
-LaTeX Warning: Reference `sec:plan3' on page 5 undefined on input line 210.
-
-=======
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2{/usr/share/texmf/fonts/
-enc/dvips/cm-super/cm-super-ts1.enc}] [3]
-Overfull \hbox (5.14262pt too wide) in paragraph at lines 155--156
+[4] [5]
+Overfull \hbox (5.14262pt too wide) in paragraph at lines 173--174
 \OT1/cmr/m/n/12 In this prob-lem, we have five rooms: storage-room preparation-
 room cooking-room serving-
  []
 
-[4] [5]
->>>>>>> c17cf24 (wrapfigure and discussion)
-No file main.bbl.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[6] [7] [8] [9] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2023/02/27 1.9 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
@@ -831,7 +810,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.245 ...anguage=PDDL, caption=Plan for Problem 1]
+l.269 ...anguage=PDDL, caption=Plan for Problem 1]
                                                   
 The following languages weren't loadable:
     ,pddl$
@@ -844,14 +823,14 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.245 ...anguage=PDDL, caption=Plan for Problem 1]
+l.269 ...anguage=PDDL, caption=Plan for Problem 1]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 245.
-[6] [7] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+nput line 269.
+[10] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -867,7 +846,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.341 ...anguage=PDDL, caption=Plan for Problem 2]
+l.365 ...anguage=PDDL, caption=Plan for Problem 2]
                                                   
 The following languages weren't loadable:
     ,pddl$
@@ -880,12 +859,12 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.341 ...anguage=PDDL, caption=Plan for Problem 2]
+l.365 ...anguage=PDDL, caption=Plan for Problem 2]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[8] [9] [10] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[11] [12] [13] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -901,7 +880,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.524 ...anguage=PDDL, caption=Plan for Problem 3]
+l.548 ...anguage=PDDL, caption=Plan for Problem 3]
                                                   
 The following languages weren't loadable:
     ,pddl$
@@ -914,31 +893,36 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.524 ...anguage=PDDL, caption=Plan for Problem 3]
+l.548 ...anguage=PDDL, caption=Plan for Problem 3]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[11] [12] [13] [14] [15] [16] (./main.aux)
+[14] [15] [16] [17] [18] [19] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4654EE22A109AC4BC1FCAEB499BD88D5;2722.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 6EC415D49E968B4FFEE2EBA6F731150C;2636
+(rerunfilecheck)             After:  30240D4C9D36A130FAB67AF45BAD86AA;2738.
  ) 
 Here is how much of TeX's memory you used:
- 24793 strings out of 474222
- 466965 string characters out of 5748732
+ 24792 strings out of 474222
+ 466931 string characters out of 5748732
  2296975 words of memory out of 5000000
- 46043 multiletter control sequences out of 15000+600000
+ 46039 multiletter control sequences out of 15000+600000
  568461 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
-<<<<<<< HEAD
- 84i,7n,93p,881b,1978s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (15 pages, 168950 bytes).
-=======
  84i,8n,93p,829b,1978s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -950,11 +934,10 @@ pe1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pf
 b>
-Output written on main.pdf (16 pages, 168444 bytes).
->>>>>>> c17cf24 (wrapfigure and discussion)
+Output written on main.pdf (19 pages, 180405 bytes).
 PDF statistics:
- 926 PDF objects out of 1000 (max. 8388607)
- 879 compressed objects within 9 object streams
- 597 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 935 PDF objects out of 1000 (max. 8388607)
+ 885 compressed objects within 9 object streams
+ 600 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -58,7 +58,9 @@ Mácsai Dániel
     This report describes the development and implementation of the Robot Chef task. The objective of this project is to automate meal preparation in a structured kitchen environment using a planning algorithm implemented in PDDL. For this project, we utilized the Best First Width Search (BFWS) planner to enable the robot to handle various recipes—such as tortilla, sushi, and paella—each requiring specific preparation steps across different kitchen zones. The task begins with a scenario where tools are misplaced and dirty, requiring the robot to clean, relocate, and organize the tools before proceeding with tasks like cutting, cooking, and mixing to prepare the ingredients.
 \end{abstract}
 
+\newpage
 \tableofcontents
+\newpage
 
 \section{Introduction}
 \label{sec:introduction}
@@ -176,7 +178,7 @@ In this problem, we have five rooms: storage-room preparation-room cooking-room 
     \item Conditions: rice must be cooked and fish and vegetables must be prepared.
 \end{itemize}
 \subsubsection{Plan and Metrics}
-To see the whole plan see annex \ref{sec:plan1}. The plan has a total of 77 actions, it is correct, and the chef robot is able to prepare the sushi dish. The metrics of the found plan, using BFS Planner, are:
+To see the whole plan see annex \ref{sec:plan1}. The plan has a total of 92 actions, it is correct, and the chef robot is able to prepare the sushi dish. The metrics of the found plan, using BFS Planner, are:
 
 \begin{itemize}
     \item \textbf{Nodes generated during search:} 1733
@@ -228,7 +230,7 @@ In this problem, we now have three recipes to prepare: tortilla, sushi, and pael
 The objective of this test is to evaluate what happens when there are multiple recipes and everything is out of place. The robot starts in the dishwashing room, and both tools—the spatula and the knife—are dirty and located in the wrong room (the service room).
 
 \subsubsection{Plan and Metrics}
-To tee the whole plan see annex \ref{sec:plan3}. The plan has a total of 103 actions, it is correct, and the chef robot is able to prepare the three dishes. The metrics of the found plan, using BFS Planner, are:
+To tee the whole plan see annex \ref{sec:plan3}. The plan has a total of 283 actions, it is correct, and the chef robot is able to prepare the three dishes. The metrics of the found plan, using BFS Planner, are:
 
 \begin{itemize}
     \item \textbf{Nodes generated during search:} 45145
@@ -248,15 +250,21 @@ After a thorough analysis of each plan, we did not identify any significant acti
 Moreover, we observe that the first problem, involving one dish, is solved in 0.012 seconds. The second problem, with two dishes, requires 0.052 seconds, and the third problem, encompassing three dishes, takes 0.748 seconds to solve. The number of nodes generated and expanded also exhibits an exponential increase relative to the number of dishes. This serves as a clear illustration of how problem complexity affects the time and resources needed for resolution. As the number of dishes and ingredients increases, the number of actions the robot must perform and consider significantly enlarges the search space.
 
 
+\section{Future Work}
+\begin{itemize}
+\item \textbf{Error Handling and Adaptability}: To enhance the robot's functionality, we could introduce scenarios requiring it to adapt to unexpected events like missing ingredients or equipment malfunctions. In PDDL, this could be achieved by defining additional predicates and actions that allow the robot to detect these issues and execute contingency plans, such as a function that lets the robot get more ingredients if some are missing or a function to repair a broken tool.
+
+\item \textbf{Integration with Real-Time Order Systems}: We could improve operational clarity by detailing how the robot interacts with digital order systems, focusing on real-time order prioritization and scheduling. In PDDL, this could involve creating predicates that assign a priority to each order based on factors like number of ingredients or cooking preconditions.
+\end{itemize}
+
+
 \section{Conclusion}
 \label{sec:conclusion}
-This project showed how to create a detailed planning model using PDDL for a robot chef working in a kitchen. By clearly defining its actions, rules, and key components, we built a flexible system that can handle different cooking and serving tasks. 
+This project showed how to create a detailed planning model using PDDL for a robot chef working in a kitchen. By clearly defining its actions, rules, and key components, we built a flexible system that can handle different cooking and serving tasks. Apart from this, we detected a great increase in search time and resources with additional recipes, which gives more importance to the need for efficient planning algorithms and optimization techniques. 
 
-\section{References}
-\label{sec:references}
-\bibliographystyle{plain}
-\bibliography{references}
 
+
+\newpage
 \appendix
 \section{Planning Output}
 \subsection{Problem 1}
