@@ -4,7 +4,7 @@
         storage-room preparation-room cooking-room serving-room dishwashing-room cutting-room mixing-room - room
         ; Dishes:
         sushi - dish 
-        paella -dish
+        paella - dish
         ; Tools:
         knife spatula - tool
         ; Ingredients:

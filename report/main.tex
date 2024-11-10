@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning}
 
 %% Plan aesthetics
 \usepackage{listings}
@@ -60,6 +62,44 @@ This report describes the development and implementation of the Robot Chef task.
 \section{Introduction}
 \label{sec:introduction}
 Provide an introduction to the project, including background information and objectives.
+\begin{tikzpicture}
+    % Define some colors for convenience
+    \definecolor{wallcolor}{rgb}{0.7,0.7,0.7} % wall color
+    \definecolor{chaircolor}{rgb}{0.7,0.9,1.0} % chair color
+    \definecolor{redcolor}{rgb}{1.0,0.8,0.8} % red area color
+    
+    % Draw walls
+    \fill[wallcolor] (0,4) rectangle (3.4,3); % top horizontal wall
+    \fill[wallcolor] (4,0) rectangle (4.5,3); % vertical wall on the right of SVA
+    \fill[wallcolor] (2,0.5) rectangle (4.5,0); % bottom horizontal wall
+    
+    % Room divisions
+    \draw[thick] (0,0) rectangle (4.5,3); % outer rectangle (overall structure)
+    \draw[thick] (3,-1) rectangle (5.5,0); % SA 
+    \draw[thick] (5.5,-1) rectangle (7.5,0); % CTA
+    \draw[thick] (4.5,1) rectangle (7.5,0); % MIXA
+    \draw[thick] (4.5,3) rectangle (7.5,1); % PA
+    \draw[thick] (6,3) rectangle (7.5,2); % DWA
+    \draw[thick] (3.4,3) rectangle (7.5,4); % CA
+    
+
+    % Labels
+    \node at (2.2,1.5) {SVA}; % SVA label
+    \node at (3.7,-0.5) {SA}; % SA label
+    \node at (5.4,2) {PA}; % PA label
+    \node at (6.7,2.5) {DWA}; % DWA label
+    \node at (6.5,-0.5) {CTA}; % CTA label
+    \node at (5.7,0.5) {MIXA}; % MIXA label
+    \node at (5,3.5) {CA}; % CA label
+    
+    
+    % Person icon
+    \node[draw, circle, fill=blue!30, inner sep=0pt, minimum size=0.3cm] at (4,3.5) {}; % Person circle icon
+
+\end{tikzpicture}
+
+
+
 
 \section{Methodology}
 \label{sec:methodology}
@@ -116,6 +156,29 @@ To tee the whole plan see annex \ref{sec:plan2}. The plan has a total of 179 act
     \item \textbf{Nodes expanded during search:} 1382
     \item \textbf{Plan found with cost:} 179
     \item \textbf{BFS search completed in:} 0.051842 seconds
+\end{itemize}
+
+\subsection{Problem 3}
+\subsubsection{Objects and Initial State}
+In this problem, we now have three recipes to prepare: tortilla, sushi, and paella. The recipes for sushi and paella remain the same as before, but we have added the tortilla, which requires specific ingredients: eggs, potatoes, and onions.
+
+
+\textbf{Tortilla}
+\begin{itemize}
+    \item Ingredients: eggs, potatoes, onions.
+    \item Conditions: potatoes and onions must be cut first and then cooked.
+\end{itemize}
+
+The objective of this test is to evaluate what happens when there are multiple recipes and everything is out of place. The robot starts in the dishwashing room, and both tools—the spatula and the knife—are dirty and located in the wrong room (the service room).
+
+\subsubsection{Plan and Metrics}
+To tee the whole plan see annex \ref{sec:plan3}. The plan has a total of 103 actions, it is correct, and the chef robot is able to prepare the three dishes. The metrics of the found plan, using BFS Planner, are:
+
+\begin{itemize}
+    \item \textbf{Nodes generated during search:} 45145
+    \item \textbf{Nodes expanded during search:} 14424
+    \item \textbf{Plan found with cost:} 283
+    \item \textbf{BFS search completed in:} 0.748445 secs
 \end{itemize}
 
 
@@ -412,5 +475,293 @@ pick-up chef PAELLA preparation-room
 move chef preparation-room cooking-room 
 move chef cooking-room serving-room 
 plate-dish chef serving-room PAELLA 
+\end{lstlisting}
+\subsection{Problem 3}
+\label{sec:plan3}
+\begin{lstlisting}[language=PDDL, caption=Plan for Problem 3]
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room storage-room 
+pick-up-ingredient chef rice sushi storage-room 
+move chef storage-room mixing-room 
+drop-ingredient-at-prep chef rice mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room 
+pick-up chef knife serving-room 
+move chef serving-room cooking-room 
+move chef cooking-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+drop-tool chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room 
+pick-up chef spatula serving-room 
+move chef serving-room cooking-room 
+move chef cooking-room preparation-room 
+move chef preparation-room mixing-room 
+drop-tool chef spatula mixing-room 
+move chef mixing-room storage-room 
+pick-up-ingredient chef onions tortilla storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef onions cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef eggs tortilla storage-room 
+move chef storage-room mixing-room 
+drop-ingredient-at-prep chef eggs mixing-room 
+move chef mixing-room storage-room 
+pick-up-ingredient chef potatoes tortilla storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef potatoes cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef rice1 paella storage-room 
+move chef storage-room mixing-room 
+drop-ingredient-at-prep chef rice1 mixing-room 
+move chef mixing-room storage-room 
+pick-up-ingredient chef vegetable1 paella storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef vegetable1 cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef shrimps paella storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef shrimps cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef fish1 paella storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef fish1 cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef fish sushi storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef fish cutting-room 
+move chef cutting-room storage-room 
+pick-up-ingredient chef vegetable sushi storage-room 
+move chef storage-room cutting-room 
+drop-ingredient-at-prep chef vegetable cutting-room 
+move chef cutting-room mixing-room 
+pick-up chef spatula mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef spatula dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+prepare-ingredient chef rice spatula mixing-room 
+drop-tool chef spatula mixing-room 
+pick-up chef rice mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef rice cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef rice preparation-room 
+move chef preparation-room mixing-room 
+pick-up chef spatula mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef spatula dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+prepare-ingredient chef eggs spatula mixing-room 
+drop-tool chef spatula mixing-room 
+pick-up chef eggs mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef eggs cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef eggs preparation-room 
+move chef preparation-room mixing-room 
+pick-up chef spatula mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef spatula dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+prepare-ingredient chef rice1 spatula mixing-room 
+drop-tool chef spatula mixing-room 
+pick-up chef rice1 mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef rice1 cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef rice1 preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef fish knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef fish cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+drop-ingredient-at-prep chef fish preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef vegetable knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef vegetable cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+drop-ingredient-at-prep chef vegetable preparation-room 
+assemble-dish chef sushi preparation-room 
+pick-up chef sushi preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room 
+plate-dish chef serving-room sushi 
+move chef serving-room cooking-room 
+move chef cooking-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef potatoes knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef potatoes cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef potatoes cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef potatoes preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef onions knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef onions cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef onions cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef onions preparation-room 
+assemble-dish chef tortilla preparation-room 
+pick-up chef tortilla preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room 
+plate-dish chef serving-room tortilla 
+move chef serving-room cooking-room 
+move chef cooking-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef fish1 knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef fish1 cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef fish1 cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef fish1 preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef shrimps cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+drop-ingredient-at-prep chef shrimps preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef vegetable1 knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef vegetable1 cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef vegetable1 cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef vegetable1 preparation-room 
+pick-up chef shrimps preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+drop-ingredient-at-prep chef shrimps cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+prepare-ingredient chef shrimps knife cutting-room 
+drop-tool chef knife cutting-room 
+pick-up chef shrimps cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+cook-ingredient chef shrimps cooking-room 
+move chef cooking-room preparation-room 
+drop-ingredient-at-prep chef shrimps preparation-room 
+assemble-dish chef paella preparation-room 
+pick-up chef paella preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room 
+plate-dish chef serving-room paella 
+move chef serving-room cooking-room 
+move chef cooking-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+pick-up chef knife cutting-room 
+move chef cutting-room mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef knife dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+move chef mixing-room cutting-room 
+drop-tool chef knife cutting-room 
+move chef cutting-room mixing-room 
+pick-up chef spatula mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room dishwashing-room 
+clean-tool chef spatula dishwashing-room 
+move chef dishwashing-room preparation-room 
+move chef preparation-room mixing-room 
+drop-tool chef spatula mixing-room 
+move chef mixing-room preparation-room 
+move chef preparation-room cooking-room 
+move chef cooking-room serving-room     
+
 \end{lstlisting}
 \end{document}
