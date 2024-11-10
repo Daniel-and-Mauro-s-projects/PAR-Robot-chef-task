@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 1731247858.29152 0
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 1731248838.68836 0
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "main.aux" 0 -1 0 "pdflatex"
   "references.bib" 0 -1 0 ""
@@ -7,8 +7,8 @@
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1731247857.07503 "/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex" "main.pdf" "main" 1731247858.29172 2
-  "/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex" 1731247855.56881 37078 bcd3eea8bdd250a47565d52f7464fcb4 ""
+["pdflatex"] 1731248837.5296 "/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex" "main.pdf" "main" 1731248838.68851 2
+  "/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex" 1731248835.8591 37645 cc7d8a6c3194fdf7b78eecd9f805124d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -181,11 +181,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1729363324.8528 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1729363227 8221430 8383ed1ba5ed146c3ee626bea53f7fa6 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "main.aux" 1731247858.01523 3607 22af38237930d27d2d3e9c88b4968dd6 "pdflatex"
+  "main.aux" 1731248838.42506 3607 22af38237930d27d2d3e9c88b4968dd6 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1731247858.01602 2722 4654ee22a109ac4bc1fcaeb499bd88d5 "pdflatex"
-  "main.tex" 1731247855.56881 37078 bcd3eea8bdd250a47565d52f7464fcb4 ""
-  "main.toc" 1731247858.01623 1673 7f324d5476de7dbf141061663f34378f "pdflatex"
+  "main.out" 1731248838.42584 2722 4654ee22a109ac4bc1fcaeb499bd88d5 "pdflatex"
+  "main.tex" 1731248835.8591 37645 cc7d8a6c3194fdf7b78eecd9f805124d ""
+  "main.toc" 1731248838.42606 1673 7f324d5476de7dbf141061663f34378f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
