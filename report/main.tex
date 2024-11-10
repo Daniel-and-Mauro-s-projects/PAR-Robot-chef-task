@@ -59,15 +59,30 @@ This report describes the development and implementation of the Robot Chef task.
 
 \section{Introduction}
 \label{sec:introduction}
-Provide an introduction to the project, including background information and objectives.
+This assignment involves designing a plan for a robot chef operating within the structured environment of a Japanese restaurant kitchen in Barcelona to autonomously handle meal preparation tasks. The robot’s objective is to receive digital orders, gather required ingredients, perform necessary preparation and cooking steps, and plate finished dishes for serving. Operating within a divided kitchen layout, the robot must navigate across specific areas for storage, preparation, cooking, serving, and dishwashing, while adhering to operational constraints such as limited carrying capacity and the need for tool sanitation after each use.
 
-\section{Methodology}
+The planning solution is implemented using the Planning Domain Definition Language (PDDL), which defines the necessary actions, predicates, and conditions to enable the robot to effectively fulfill its tasks. This report provides a comprehensive analysis of the problem, including the structure of the PDDL model, testing cases across different scenarios, and results demonstrating the robot’s adaptability to diverse dish requirements, resource management, and task optimization. The following sections detail the problem setup, solution framework, and evaluation of scenario-based testing to assess the robot’s performance, efficiency, and flexibility.
+
+\section{Methodologyand implementation details}
 \label{sec:methodology}
-Describe the methods and techniques used in the project.
+We now define the predicates and actions that we are using in the PDDL implementation. The predicates define the state of the world (in this case, the kitchen and its elements), such as valid rooms and their adjacencies, the location of tools, and the condition of ingredients. Actions describe the possible operations the robot can perform, including moving around the kitchen, picking up items (tools, ingredients and dishes), and using them to assemble the required dishes.
 
-\section{Implementation}
-\label{sec:implementation}
-Detail the implementation process, including the predicates and actions we used. 
+\subsection{Predicates}
+\begin{itemize}
+    \item \texttt{(at ?x - portable ? - room)}: A \textit{portable} object is located in a specific room.
+    \item \texttt{(clean ?tool - tool)}: The \textit{tool} is clean.
+    \item \texttt{(holding ?x - item)}: The robot is holding the \textit{item}.
+    \item \texttt{(not-holding)}: The robot is not holding anything. 
+
+
+\end{itemize}
+
+\subsection{Actions}
+
+\begin{itemize}
+    \item
+
+\end{itemize}
 
 \section{Results}
 \subsection{Problem 1}
