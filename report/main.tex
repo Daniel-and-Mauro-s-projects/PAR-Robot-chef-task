@@ -98,16 +98,51 @@ Provide an introduction to the project, including background information and obj
 
 \end{tikzpicture}
 
+This assignment involves designing a plan for a robot chef operating within the structured environment of a Japanese restaurant kitchen in Barcelona to autonomously handle meal preparation tasks. The robot’s objective is to receive digital orders, gather required ingredients, perform necessary preparation and cooking steps, and plate finished dishes for serving. Operating within a divided kitchen layout, the robot must navigate across specific areas for storage, preparation, cooking, serving, and dishwashing, while adhering to operational constraints such as limited carrying capacity and the need for tool sanitation after each use.
 
+The planning solution is implemented using the Planning Domain Definition Language (PDDL), which defines the necessary actions, predicates, and conditions to enable the robot to effectively fulfill its tasks. This report provides a comprehensive analysis of the problem, including the structure of the PDDL model, testing cases across different scenarios, and results demonstrating the robot’s adaptability to diverse dish requirements, resource management, and task optimization. The following sections detail the problem setup, solution framework, and evaluation of scenario-based testing to assess the robot’s performance, efficiency, and flexibility.
 
-
-\section{Methodology}
+\section{Methodologyand implementation details}
 \label{sec:methodology}
-Describe the methods and techniques used in the project.
+We now define the predicates and actions that we are using in the PDDL implementation. The predicates define the state of the world (in this case, the kitchen and its elements), such as valid rooms and their adjacencies, the location of tools, and the condition of ingredients. Actions describe the possible operations the robot can perform, including moving around the kitchen, picking up items (tools, ingredients and dishes), and using them to assemble the required dishes.
 
-\section{Implementation}
-\label{sec:implementation}
-Detail the implementation process, including the predicates and actions we used. 
+\subsection{Predicates}
+\begin{itemize}
+    \item \texttt{(at ?x - portable ? - room)}: A \textit{portable} object is located in a specific room.
+    \item \texttt{(clean ?tool - tool)}: The \textit{tool} is clean.
+    \item \texttt{(holding ?x - item)}: The robot is holding the \textit{item}.
+    \item \texttt{(not-holding)}: The robot is not holding anything. 
+
+
+\end{itemize}
+
+\subsection{Actions}
+
+\begin{itemize}
+    \item \texttt{move}:  Robot transitions from one room to another. It requires three parameters: the robot itself, the room it is moving from, and the room it is moving to. The precondition for this action is that the robot must currently be in the room it is moving from, and the destination room must be adjacent to the current room. Upon successful execution of the action, the robot will be located in the new room, and it will no longer be in the original room.
+
+    \item \texttt{pick-up}: The robot picks up an item in the same room. The action is defined with the following parameters: a robot, an item, and a room. The precondition for this action is that both the robot and the item must be in the same room, and the robot must not be holding anything.
+
+    \item \texttt{pick-up-ingredient}: The robot retrieves an ingredient from storage. Parameters include a robot, an ingredient, a dish, and a room. Preconditions require the robot and ingredient to be in the storage room, the ingredient to be stored, the robot not holding anything, and the ingredient to be part of the dish. The effect is that the robot holds the ingredient, the ingredient becomes available, and it is no longer stored.
+
+    \item \texttt{drop-tool}: The robot drops a tool in a designated room. Parameters include a robot, a tool, and a room. Preconditions require the robot to be in the room, holding the tool, and the tool to be used in that room. The effect is that the robot is no longer holding the tool, and the tool is located in the room.
+    
+    \item \texttt{drop-ingredient-at-prep}: The robot drops an ingredient in a preparation room. Parameters include a robot, an ingredient, and a room. Preconditions require the robot to be in the room, holding the ingredient, and the room to be either designated for ingredient preparation or a general preparation room. The effect is that the robot is no longer holding the ingredient, the robot is not holding anything, and the ingredient is located in the room.
+    
+    \item \texttt{prepare-ingredient}: The robot prepares an ingredient using a tool in a designated room. Parameters include a robot, an ingredient, a tool, and a room. Preconditions require the robot and ingredient to be in the preparation room, the robot to hold the tool, the tool to be used in that room, and the tool to be clean. The effect is that the ingredient becomes prepared, and the tool is no longer clean.
+
+    \item \texttt{cook-ingredient}: The robot cooks a prepared ingredient in the cooking room. Parameters include a robot, an ingredient, and a room. Preconditions require the room to be designated for cooking, the robot to be in the cooking room, the ingredient to be prepared, and the robot to be holding the ingredient. The effect is that the ingredient becomes cooked.
+
+    \item \texttt{assemble-dish}: The robot assembles a dish in the preparation room. Parameters include a robot, a dish, and a room. Preconditions require the robot to be in the preparation room. The \texttt{forall} function is used to ensure that for every ingredient in the dish, if the dish requires the ingredient to be prepared, then the ingredient must be prepared and located in the room. Similarly, if the dish requires the ingredient to be cooked, then the ingredient must be cooked and located in the room. The effect is that the dish becomes prepared and is located in the room. The \texttt{forall} function is also used in the effect to ensure that for every ingredient in the dish, the ingredient is no longer available, prepared or cooked, as well as not located in the room.
+
+     The \textit{forall} function in PDDL is used to specify conditions that must hold for all objects of a certain type. In the context of the \texttt{assemble-dish} action, it ensures that the preconditions and effects apply to all ingredients that are part of the dish. This allows the robot to verify and update the state of each ingredient in relation to the dish being assembled, ensuring that all necessary conditions are met for the dish to be considered prepared.
+
+    \item \texttt{plate-dish}: The robot plates a prepared dish in the serving room. Parameters include a robot, a room, and a dish. Preconditions require the room to be designated for serving, the robot to be in the serving room, the robot to hold the dish, and the dish to be prepared. The effect is that the dish becomes served, and the robot is no longer holding the dish.
+    
+    
+    \item \texttt{clean-tool}: The robot cleans a tool in the dishwashing room. Parameters include a robot, a tool, and a room. Preconditions require the robot to be in the dishwashing room, holding the tool, and the tool not being clean. The effect is that the tool becomes clean.
+
+\end{itemize}
 
 \section{Results}
 \subsection{Problem 1}

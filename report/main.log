@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  10 NOV 2024 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  10 NOV 2024 15:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -601,23 +601,23 @@ No file main.toc.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
+[1
 
-Overfull \hbox (5.14262pt too wide) in paragraph at lines 115--116
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (5.14262pt too wide) in paragraph at lines 150--151
 \OT1/cmr/m/n/12 In this prob-lem, we have five rooms: storage-room preparation-room cooking-room serving-
  []
 
-[1
+[3]
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `sec:plan1' on page 2 undefined on input line 123.
+LaTeX Warning: Reference `sec:plan1' on page 4 undefined on input line 158.
 
 
-LaTeX Warning: Reference `sec:plan2' on page 2 undefined on input line 152.
+LaTeX Warning: Reference `sec:plan2' on page 4 undefined on input line 187.
 
-[2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[4]
 
-LaTeX Warning: Reference `sec:plan3' on page 3 undefined on input line 175.
+LaTeX Warning: Reference `sec:plan3' on page 5 undefined on input line 210.
 
 No file main.bbl.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -628,33 +628,33 @@ File: lstlang2.sty 2024/02/21 1.10 listings language file
 File: lstlang3.sty 2024/02/21 1.10 listings language file
 )
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:202: Package Listings Error: Couldn't load requested language.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:237: Package Listings Error: Couldn't load requested language.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.202 ...anguage=PDDL, caption=Plan for Problem 1]
+l.237 ...anguage=PDDL, caption=Plan for Problem 1]
                                                   
 The following languages weren't loadable:
     ,pddl$
 This may cause errors in the sequel.
 
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:202: Package Listings Error: language pddl undefined.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:237: Package Listings Error: language pddl undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.202 ...anguage=PDDL, caption=Plan for Problem 1]
+l.237 ...anguage=PDDL, caption=Plan for Problem 1]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[3]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 202.
- [4] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+[5]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 237.
+ [6] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2024/02/21 1.10 listings language file
@@ -662,31 +662,31 @@ File: lstlang2.sty 2024/02/21 1.10 listings language file
 File: lstlang3.sty 2024/02/21 1.10 listings language file
 )
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:298: Package Listings Error: Couldn't load requested language.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:333: Package Listings Error: Couldn't load requested language.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.298 ...anguage=PDDL, caption=Plan for Problem 2]
+l.333 ...anguage=PDDL, caption=Plan for Problem 2]
                                                   
 The following languages weren't loadable:
     ,pddl$
 This may cause errors in the sequel.
 
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:298: Package Listings Error: language pddl undefined.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:333: Package Listings Error: language pddl undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.298 ...anguage=PDDL, caption=Plan for Problem 2]
+l.333 ...anguage=PDDL, caption=Plan for Problem 2]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[5] [6] [7] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+[7] [8] [9] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2024/02/21 1.10 listings language file
@@ -694,31 +694,31 @@ File: lstlang2.sty 2024/02/21 1.10 listings language file
 File: lstlang3.sty 2024/02/21 1.10 listings language file
 )
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:481: Package Listings Error: Couldn't load requested language.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:516: Package Listings Error: Couldn't load requested language.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.481 ...anguage=PDDL, caption=Plan for Problem 3]
+l.516 ...anguage=PDDL, caption=Plan for Problem 3]
                                                   
 The following languages weren't loadable:
     ,pddl$
 This may cause errors in the sequel.
 
 
-/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:481: Package Listings Error: language pddl undefined.
+/Users/ismaelrg/PAR/par2/PAR-Robot-chef-task/report/main.tex:516: Package Listings Error: language pddl undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.481 ...anguage=PDDL, caption=Plan for Problem 3]
+l.516 ...anguage=PDDL, caption=Plan for Problem 3]
                                                   
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[8] [9] [10] [11] [12] [13] (./main.aux)
+[10] [11] [12] [13] [14] [15] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -737,21 +737,21 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  6944FB89139F7F0BAF438A6F7EEBFE95;2499.
+(rerunfilecheck)             After:  4654EE22A109AC4BC1FCAEB499BD88D5;2722.
  ) 
 Here is how much of TeX's memory you used:
- 24661 strings out of 474116
- 466998 string characters out of 5743681
+ 24665 strings out of 474116
+ 467032 string characters out of 5743681
  2297187 words of memory out of 5000000
  46037 multiletter control sequences out of 15000+600000
- 564068 words of font info for 59 fonts, out of 8000000 for 9000
+ 564415 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,7n,93p,490b,1979s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (13 pages, 140934 bytes).
+ 84i,7n,93p,881b,1978s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (15 pages, 164230 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 773 compressed objects within 8 object streams
- 592 named destinations out of 1000 (max. 500000)
+ 832 PDF objects out of 1000 (max. 8388607)
+ 787 compressed objects within 8 object streams
+ 595 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
