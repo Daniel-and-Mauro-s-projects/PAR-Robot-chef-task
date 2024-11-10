@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{tikz}
+\usepackage{wrapfig}
 \usetikzlibrary{shapes, positioning}
 
 %% Plan aesthetics
@@ -62,41 +63,45 @@ Mácsai Dániel
 \section{Introduction}
 \label{sec:introduction}
 Provide an introduction to the project, including background information and objectives.
-\begin{tikzpicture}
-    % Define some colors for convenience
-    \definecolor{wallcolor}{rgb}{0.7,0.7,0.7} % wall color
-    \definecolor{chaircolor}{rgb}{0.7,0.9,1.0} % chair color
-    \definecolor{redcolor}{rgb}{1.0,0.8,0.8} % red area color
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
+    \begin{tikzpicture}
+        % Define some colors for convenience
+        \definecolor{wallcolor}{rgb}{0.7,0.7,0.7} % wall color
+        \definecolor{chaircolor}{rgb}{0.7,0.9,1.0} % chair color
+        \definecolor{redcolor}{rgb}{1.0,0.8,0.8} % red area color
+        
+        % Draw walls
+        \fill[wallcolor] (0,4) rectangle (3.4,3); % top horizontal wall
+        \fill[wallcolor] (4,0) rectangle (4.5,3); % vertical wall on the right of SVA
+        \fill[wallcolor] (2,0.5) rectangle (4.5,0); % bottom horizontal wall
+        
+        % Room divisions
+        \draw[thick] (0,0) rectangle (4.5,3); % outer rectangle (overall structure)
+        \draw[thick] (3,-1) rectangle (5.5,0); % SA 
+        \draw[thick] (5.5,-1) rectangle (7.5,0); % CTA
+        \draw[thick] (4.5,1) rectangle (7.5,0); % MIXA
+        \draw[thick] (4.5,3) rectangle (7.5,1); % PA
+        \draw[thick] (6,3) rectangle (7.5,2); % DWA
+        \draw[thick] (3.4,3) rectangle (7.5,4); % CA
+        
     
-    % Draw walls
-    \fill[wallcolor] (0,4) rectangle (3.4,3); % top horizontal wall
-    \fill[wallcolor] (4,0) rectangle (4.5,3); % vertical wall on the right of SVA
-    \fill[wallcolor] (2,0.5) rectangle (4.5,0); % bottom horizontal wall
-    
-    % Room divisions
-    \draw[thick] (0,0) rectangle (4.5,3); % outer rectangle (overall structure)
-    \draw[thick] (3,-1) rectangle (5.5,0); % SA 
-    \draw[thick] (5.5,-1) rectangle (7.5,0); % CTA
-    \draw[thick] (4.5,1) rectangle (7.5,0); % MIXA
-    \draw[thick] (4.5,3) rectangle (7.5,1); % PA
-    \draw[thick] (6,3) rectangle (7.5,2); % DWA
-    \draw[thick] (3.4,3) rectangle (7.5,4); % CA
-    
-
-    % Labels
-    \node at (2.2,1.5) {SVA}; % SVA label
-    \node at (3.7,-0.5) {SA}; % SA label
-    \node at (5.4,2) {PA}; % PA label
-    \node at (6.7,2.5) {DWA}; % DWA label
-    \node at (6.5,-0.5) {CTA}; % CTA label
-    \node at (5.7,0.5) {MIXA}; % MIXA label
-    \node at (5,3.5) {CA}; % CA label
-    
-    
-    % Person icon
-    \node[draw, circle, fill=blue!30, inner sep=0pt, minimum size=0.3cm] at (4,3.5) {}; % Person circle icon
-
-\end{tikzpicture}
+        % Labels
+        \node at (2.2,1.5) {SVA}; % SVA label
+        \node at (3.7,-0.5) {SA}; % SA label
+        \node at (5.4,2) {PA}; % PA label
+        \node at (6.7,2.5) {DWA}; % DWA label
+        \node at (6.5,-0.5) {CTA}; % CTA label
+        \node at (5.7,0.5) {MIXA}; % MIXA label
+        \node at (5,3.5) {CA}; % CA label
+        
+        
+        % Person icon
+        \node[draw, circle, fill=blue!30, inner sep=0pt, minimum size=0.3cm] at (4,3.5) {}; % Person circle icon
+    \end{tikzpicture}
+    \caption{Kitchen layout}
+    \label{fig:kitchen_layout}
+\end{wrapfigure}
 
 This assignment involves designing a plan for a robot chef operating within the structured environment of a Japanese restaurant kitchen in Barcelona to autonomously handle meal preparation tasks. The robot’s objective is to receive digital orders, gather required ingredients, perform necessary preparation and cooking steps, and plate finished dishes for serving. Operating within a divided kitchen layout, the robot must navigate across specific areas for storage, preparation, cooking, serving, and dishwashing, while adhering to operational constraints such as limited carrying capacity and the need for tool sanitation after each use.
 
@@ -235,7 +240,10 @@ To tee the whole plan see annex \ref{sec:plan3}. The plan has a total of 103 act
 
 \section{Discussion}
 \label{sec:discussion}
-Discuss the results, their implications, and any limitations of the project.
+After looking for a while into each and every plan, we were not able to see any outrageous move that could be enhanced. Clearly, this is no scientific method to prove optimality, but it is a good indicator.
+
+Besides this, we see that the first problem, with one dish, takes 0.012 seconds to be solved, the second problem with two dishes takes 0.052 seconds and finally the third problem with three dishes takes 0.748 seconds. The results for nodes generated and expanded also follow this kind of exponential behavior related to the number of dishes. This is a clear example of how the complexity of the problem affects the time and resources it takes to solve it. The more dishes and ingredients, the more actions the robot has to take and consider, greatly increasing the search space.
+
 
 \section{Conclusion}
 \label{sec:conclusion}
